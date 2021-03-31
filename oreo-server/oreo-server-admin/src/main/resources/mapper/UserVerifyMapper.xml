@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oreo.server.admin.mapper.UserVerifyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.oreo.common.model.entity.po.UserVerify">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="community_id" property="communityId" />
+        <result column="community_name" property="communityName" />
+        <result column="parking_sn" property="parkingSn" />
+        <result column="owner_name" property="ownerName" />
+        <result column="id_card" property="idCard" />
+        <result column="probative_url" property="probativeUrl" />
+        <result column="verify_status" property="verifyStatus" />
+        <result column="apply_time" property="applyTime" />
+        <result column="verify_time" property="verifyTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, community_id, community_name, parking_sn, owner_name, id_card, probative_url, verify_status, apply_time, verify_time, update_time
+    </sql>
+
+</mapper>

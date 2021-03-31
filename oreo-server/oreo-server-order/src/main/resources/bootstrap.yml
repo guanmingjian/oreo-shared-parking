@@ -1,0 +1,40 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: oreo-server-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SERVER_GROUP
+        prefix: oreo-server-order
+        file-extension: yaml
+        namespace: @configNamespace@
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error
+
+application:
+  app-id: wx9cbc040cc583174f
+  app-secret: 7cd9d76fe766a31c178218b808e45c69
+  mch-id: 1601525273
+  key: wejlzmfjtwnsjt23452ljasldn8903js
+  cert-path: D:/apiclient_cert.p12
+

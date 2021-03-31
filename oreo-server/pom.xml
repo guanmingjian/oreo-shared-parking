@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>oreo-shared-parking</artifactId>
+        <groupId>cn.oreo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>pom</packaging>
+    <name>oreo-server</name>
+    <version>1.0-SNAPSHOT</version>
+    <description>OREO-Server服务提供模块</description>
+    <modules>
+        <module>oreo-server-system</module>
+        <module>oreo-server-user</module>
+        <module>oreo-server-admin</module>
+        <module>oreo-server-order</module>
+        <module>oreo-server-parking</module>
+        <module>oreo-server-pay</module>
+    </modules>
+    <artifactId>oreo-server</artifactId>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.github.wxpay</groupId>
+            <artifactId>wxpay-sdk</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-redis-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

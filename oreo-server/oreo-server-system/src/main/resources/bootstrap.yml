@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: oreo-server-system
+  cloud:
+    nacos:
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SYSTEM_GROUP
+        prefix: oreo-server-system
+        file-extension: yaml
+        namespace: @configNamespace@
+        refreshable-dataids:
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

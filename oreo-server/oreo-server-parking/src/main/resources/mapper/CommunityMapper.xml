@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oreo.server.parking.mapper.CommunityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.oreo.common.model.entity.po.Community">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="space_total_number" property="spaceTotalNumber" />
+        <result column="space_available_number" property="spaceAvailableNumber" />
+        <result column="add_time" property="addTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="cooperation_time" property="cooperationTime" />
+        <result column="cooperation_deadline" property="cooperationDeadline" />
+        <result column="deleted" property="deleted" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="area" property="area" />
+        <result column="address" property="address" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, space_total_number, space_available_number, add_time, update_time, cooperation_time, cooperation_deadline, deleted, province, city, area, address, longitude, latitude
+    </sql>
+
+</mapper>

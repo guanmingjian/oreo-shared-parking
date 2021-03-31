@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: oreo-admin
+  cloud:
+    nacos:
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SYSTEM_GROUP
+        prefix: oreo-admin
+        file-extension: yaml
+        namespace: @configNamespace@
+
+logging:
+  level:
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

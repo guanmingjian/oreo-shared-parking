@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>oreo-shared-parking</artifactId>
+        <groupId>cn.oreo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <description>安全授权认证模块</description>
+    <artifactId>oreo-security-auth</artifactId>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-redis-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-datasource-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-doc-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-security-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.oreo</groupId>
+            <artifactId>oreo-common-logging-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--    图形验证码    -->
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>${easy-captcha.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--    第三方登录组件    -->
+        <dependency>
+            <groupId>com.xkcoding</groupId>
+            <artifactId>justauth-spring-boot-starter</artifactId>
+            <version>${justauth.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>dev-guan</id>
+            <properties>
+                <configNamespace>oreo-a-dev</configNamespace>
+                <discoveryNamespace>oreo-dev-guan</discoveryNamespace>
+            </properties>
+            <activation>
+                <!-- 默认环境 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>dev-xu</id>
+            <properties>
+                <configNamespace>oreo-a-dev</configNamespace>
+                <discoveryNamespace>oreo-dev-xu</discoveryNamespace>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev-guo</id>
+            <properties>
+                <configNamespace>oreo-a-dev</configNamespace>
+                <discoveryNamespace>oreo-dev-guo</discoveryNamespace>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev-chen</id>
+            <properties>
+                <configNamespace>oreo-a-dev</configNamespace>
+                <discoveryNamespace>oreo-dev-chen</discoveryNamespace>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <configNamespace>oreo-a-dev</configNamespace>
+                <discoveryNamespace>oreo-a-prod</discoveryNamespace>
+            </properties>
+        </profile>
+
+    </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

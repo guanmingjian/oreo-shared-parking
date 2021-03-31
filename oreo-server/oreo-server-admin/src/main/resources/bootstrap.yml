@@ -1,0 +1,32 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: oreo-server-admin
+  cloud:
+    nacos:
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SERVER_GROUP
+        prefix: oreo-server-admin
+        file-extension: yaml
+        namespace: @configNamespace@
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

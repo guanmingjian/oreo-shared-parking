@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.oreo.common.logging.starter.configure.OreoLogAutoConfigure

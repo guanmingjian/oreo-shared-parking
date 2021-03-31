@@ -1,0 +1,39 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: oreo-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SYSTEM_GROUP
+        prefix: oreo-gateway
+        file-extension: yaml
+        namespace: @configNamespace@
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+        data:
+          convert:
+            CustomConversions: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

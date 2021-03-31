@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oreo.server.admin.mapper.FeeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.oreo.common.model.entity.vo.FeeVo">
+        <id column="community_id" property="communityId" />
+        <result column="time" property="time" />
+        <result column="time_fee" property="timeFee" />
+        <result column="extra_unit_fee" property="extraUnitFee" />
+        <result column="time_description" property="timeDescription" />
+        <result column="unit_fee" property="unitFee" />
+        <result column="unit_description" property="unitDescription" />
+    </resultMap>
+
+    <select id="selectFeeVo" resultType="cn.oreo.common.model.entity.vo.FeeVo">
+        select t.id timeFeeId,u.id unitFeeId,t.community_id,t.time,t.time_fee,t.extra_unit_fee,t.time_description,u.unit_fee,u.unit_description,e.earnest_price earnestPrice
+        from t_time_fee t,t_unit_fee u,t_community_earnest_price e
+        <if test="communityId!=null">
+            where t.community_id=#{communityId} AND u.community_id=#{communityId} AND e.community_id=#{communityId}
+        </if>
+    </select>
+
+</mapper>

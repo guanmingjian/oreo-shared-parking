@@ -1,0 +1,32 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: oreo-server-pay
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: oreo-a-prod
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SERVER_GROUP
+        prefix: oreo-server-pay
+        file-extension: yaml
+        namespace: oreo-a-dev
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

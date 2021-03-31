@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: oreo-server-parking
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SERVER_GROUP
+        prefix: oreo-server-parking
+        file-extension: yaml
+        namespace: @configNamespace@
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

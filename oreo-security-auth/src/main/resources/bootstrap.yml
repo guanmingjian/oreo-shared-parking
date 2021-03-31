@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: oreo-auth
+  cloud:
+    nacos:
+      config:
+        server-addr: 119.23.77.101:8001
+        group: SYSTEM_GROUP
+        prefix: oreo-auth
+        file-extension: yaml
+        namespace: @configNamespace@
+      discovery:
+        server-addr: 119.23.77.101:8001
+        namespace: @discoveryNamespace@
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          actuate:
+            endpoint:
+              EndpointId: error
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error

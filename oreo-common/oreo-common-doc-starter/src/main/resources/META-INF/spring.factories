@@ -1,0 +1,3 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.oreo.common.doc.starter.configure.OreoDocAutoConfigure
